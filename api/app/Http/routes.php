@@ -15,4 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/permit/{id}', 'permitscontroller@show');
 Route::get('/place/{place}', 'permitscontroller@filterByPlace');
+Route::get('/municipality/{municipality}', 'permitscontroller@filterByMunicipality');
+Route::get('/province/{province}', 'permitscontroller@filterByProvince');
+

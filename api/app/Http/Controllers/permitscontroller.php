@@ -9,6 +9,23 @@ use App\Http\Controllers\Controller;
 
 class permitscontroller extends Controller
 {
+    private function filterPermits($key, $value)
+    {
+        $json = file_get_contents(getenv('JSON_PERMITS_DATA'));
+        $permits = json_decode($json, true);
+
+        $permitsFiltered = array();
+        foreach ($permits as &$item) {
+            if( mb_strtolower($item[$key]) === mb_strtolower($value) )
+            {
+                array_push($permitsFiltered, $item);
+            }
+        }
+        unset($item); // break the reference with the last element
+
+        return $permitsFiltered;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -49,24 +66,26 @@ class permitscontroller extends Controller
     public function show($id)
     {
         //
+        $json_output = $this->filterPermits('Номер', $id);
+        return response()->json( $json_output, 200, array(), JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT );
     }
 
     public function filterByPlace($place)
     {
-        $json = file_get_contents(getenv('JSON_PERMITS_DATA'));
-        $permits = json_decode($json, true);
+        $json_output = $this->filterPermits('Землище', $place);
+        return response()->json( $json_output, 200, array(), JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT );
+    }
 
-        $permitsFiltered = array();
-        foreach ($permits as &$item) {
-            if( mb_strtolower($item['Землище']) === mb_strtolower($place) )
-            {
-                array_push($permitsFiltered, $item);
-            }
-        }
-        unset($item); // break the reference with the last element
+    public function filterByMunicipality($municipality)
+    {
+        $json_output = $this->filterPermits('Община', $municipality);
+        return response()->json( $json_output, 200, array(), JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT );
+    }
 
-        $json_output = json_encode($permitsFiltered,JSON_UNESCAPED_UNICODE);
-        print_r( $json_output ); 
+    public function filterByProvince($province)
+    {
+        $json_output = $this->filterPermits('Област', $province);
+        return response()->json( $json_output, 200, array(), JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT );
     }
 
     /**

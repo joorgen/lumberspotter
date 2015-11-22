@@ -17,6 +17,7 @@
                 display: table;
                 font-weight: 100;
                 font-family: 'Roboto';
+                color: #B0BEC5;
             }
 
             .container {

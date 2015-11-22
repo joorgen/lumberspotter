@@ -48,7 +48,7 @@ int main (int argc, char *argv[])
 	while(getline(in,line))
 	{
 		replaceFirstCommaInLine(line);
-		out << line;
+		out << line << endl;
 	}
 	in.close();
 	out.close();
