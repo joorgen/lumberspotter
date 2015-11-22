@@ -51,14 +51,14 @@ class permitscontroller extends Controller
         //
     }
 
-    public function showFromTown($town)
+    public function filterByPlace($place)
     {
         $json = file_get_contents(getenv('JSON_PERMITS_DATA'));
         $permits = json_decode($json, true);
 
         $permitsFiltered = array();
         foreach ($permits as &$item) {
-            if( $item["Землище"] === $town )
+            if( mb_strtolower($item['Землище']) === mb_strtolower($place) )
             {
                 array_push($permitsFiltered, $item);
             }
@@ -66,7 +66,7 @@ class permitscontroller extends Controller
         unset($item); // break the reference with the last element
 
         $json_output = json_encode($permitsFiltered,JSON_UNESCAPED_UNICODE);
-        print_r( $json_output );   
+        print_r( $json_output ); 
     }
 
     /**

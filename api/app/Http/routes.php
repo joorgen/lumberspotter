@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/town/{town}', 'permitscontroller@showFromTown');
+Route::get('/place/{place}', 'permitscontroller@filterByPlace');
