@@ -24,8 +24,13 @@
     $filters_json = $_GET['filters'];
    
     $filters = json_decode($filters_json,true);
-	$json_output = filterPermits( key($filters), $filters[key($filters)]);
+    if( !isset( $filters))
+    {
+        header('HTTP/1.0 404 Not Found');
+        exit();        
+    }
 
+	$json_output = filterPermits( key($filters), $filters[key($filters)]);
     header('Content-Type: application/json');
 	print_r( json_encode($json_output, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT ) );
 ?>
