@@ -27,8 +27,16 @@ permitcatControllers.controller('PlaceDetailsCtrl', ['$scope', '$routeParams', '
 		var obshtina = setFirstCapital($routeParams.obshtina);
 		console.log(place);
 		console.log(obshtina);
-		$http.get('http://localhost:8000/logging-permits-registry/api/permits_api.php?filters={"Землище":"' + place +'"}').success(function(data) {
-			$scope.permits = data;
-			console.log(data);
-		});
+		$scope.loading = true;
+		$http.get('http://localhost:8000/logging-permits/api/permits_api.php?filters={"Землище":"' + place +'"}')
+			.success(function(data) {
+				$scope.permits = data;
+			})
+			.catch(function (err) {
+				// Log error somehow.
+			})
+			.finally(function () {
+				// Hide loading spinner whether our call succeeded or failed.
+				$scope.loading = false;
+			});
 }]);
