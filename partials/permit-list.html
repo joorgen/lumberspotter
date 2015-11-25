@@ -1,8 +1,8 @@
 <i class="fa fa-refresh fa-spin" ng-show="loading"></i>
 <p ng-hide="loading">Регионалната Дирекция по Горите е издала {{permits.length}} разрешителни за сеч в землище {{permits[0]["Землище"]}} в община {{permits[0]["Община"]}}
-<ul class="">
-	<li ng-repeat="permit in permits" class="thumbnail">
-		<a href="#/permits/{{permit['Номер']}}">{{ permit["Номер"]}}</a>
+<ul class="list-group list-permits">
+	<li class="list-group-item" ng-repeat="permit in permits">
+		<p><a href="#/permits/{{permit['Номер']}}">{{ permit["Номер"]}}</a></p>
 		<p>Дата: {{permit["Дата"]}}</p>
 		<p>РДГ: {{permit["РДГ"]}}</p>
 		<p>Фирма: {{permit["Фирма"]}}</p>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="permitcatApp">
+<html ng-app="permitcatApp" lang="bg">
 <head>
-	<meta charset="UTF-8">
 	<title>Позволителни за сеч</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico" />
 	<link rel="stylesheet" type="text/css' href='https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css">
@@ -15,9 +16,9 @@
 </head>
 
 <body>
-	<div class="container" >
+	<div class="container-fluid">
 
-		<div class="alert alert-info">
+		<div class="page-header">   <!--jumbotron alert alert-info"> -->
 			<a href="#"><h1>Позволителни за сеч</h1></a>
 		</div>
 
@@ -31,8 +32,8 @@
 		</form>
 
 		<div ng-controller="PlaceListCtrl">
-			<ul class="">
-				<li ng-repeat="place in places" ng-show="searchPlace.ime.length >= 3 && ([place] | filter:searchPlace).length > 0 ">
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="place in places" ng-show="searchPlace.ime.length >= 3 && ([place] | filter:searchPlace).length > 0 ">
 					<a href="#/places/{{place.ime}}-{{place.obshtina}}">{{place.ime}}, {{place.obshtina}}</a>
 				</li>
 			</ul>
