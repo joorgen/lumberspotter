@@ -31,6 +31,6 @@
     }
 
 	$json_output = filterPermits( key($filters), $filters[key($filters)]);
-    header('Content-Type: application/json');
+    header('Content-Type: application/json; charset=utf-8');
 	print_r( json_encode($json_output, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT ) );
 ?>
