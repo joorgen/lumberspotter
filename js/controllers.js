@@ -9,7 +9,7 @@ permitcatControllers.controller('PlaceDetailsCtrl', ['$scope', '$routeParams', '
 		$scope.loading = true;
 		$scope.dataAvail = false;
 
-		$http.get('api/permits_api.php?filters={"Землище":"' + $routeParams.placeId +'","Община":"' +$routeParams.obshtina + '"}')
+		$http.get(config.opendata_api_url + '?filters={"Землище":"' + $routeParams.placeId +'","Община":"' +$routeParams.obshtina + '"}')
 			.success(function(data) {
 				$scope.permits = data;
 			})
@@ -31,7 +31,7 @@ permitcatControllers.controller('PermitDetailsCtrl', ['$scope', '$routeParams', 
 		$scope.loading = true;
 		$scope.dataAvail = false;
 
-		$http.get('api/permits_api.php?filters={"Номер":"' + $routeParams.permitId +'"}')
+		$http.get(config.opendata_api_url + '?filters={"Номер":"' + $routeParams.permitId +'"}')
 		.success(function(data) {
 			$scope.permit = data;
 		})
