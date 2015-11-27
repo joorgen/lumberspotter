@@ -8,39 +8,36 @@
 	<link rel="stylesheet" type="text/css' href='https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css">
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<script src="js/angular-route.min.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
+	<script src="js/autocomplete.js"></script>
+	<link rel="stylesheet" href="css/app.css">
 </head>
 
 <body>
 	<div class="container-fluid">
 
-		<div id="header" class="page-header">   <!--jumbotron alert alert-info"> -->
+ 		<div id="header" class="page-header hidden-xs">
 			<a href="#"><h1>Позволителни за сеч</h1></a>
 		</div>
 
-		<form>
+		<form onSubmit="window.location.href = '#/places/' + search.value;">
 			<div class="form-group">
 				<div class="input-group">
 					<div class="input-group-addon"><span class="fa fa-search" aria-hidden="true"></span></div>
-					<input type="search" class="form-control" autofocus placeholder="Провери позволително" ng-model="searchPlace.ime">
+					<input id="search" type="search" class="form-control" autofocus placeholder="Провери позволително" ng-model="search">
 				</div>
 			</div>
 		</form>
 
-		<div ng-controller="PlaceListCtrl">
-			<ul class="list-group">
-				<li class="list-group-item" ng-repeat="place in places" ng-show="searchPlace.ime.length >= 3 && ([place] | filter:searchPlace).length > 0 ">
-					<a href="#/places/{{place.ime}}-{{place.obshtina}}">{{place.ime}}, {{place.obshtina}}</a>
-				</li>
-			</ul>
-		</div>
-
 		<div ng-view></div>
 
-	</div>
+		</div>
 </body>
 </html>
+

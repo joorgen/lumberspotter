@@ -18,6 +18,10 @@ permitcatApp.config(['$routeProvider',
 			templateUrl: 'partials/permit-list.html',
 			controller: 'PlaceDetailsCtrl'
 		}).
+		when('/permits/:permitId',{
+			templateUrl: 'partials/permit-details.html',
+			controller: 'PermitDetailsCtrl'
+		}).
 		otherwise({
 			redirectTo: '/'
 		});
