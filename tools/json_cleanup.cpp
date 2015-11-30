@@ -6,7 +6,7 @@ Cleans up JSON files when you have this exact pattern
     "name":asd
 }
 
-This will be turned in 
+This will be turned in
 {
 	"count":12.34,
 	"name":asd
@@ -41,7 +41,7 @@ int main (int argc, char *argv[])
 		return 0;
 	}
 	string inputJSONFile = argv[1];
-	
+
 	ifstream in(inputJSONFile.c_str());
 	ofstream out( (string("mod_") + inputJSONFile).c_str() );
 	string line;
@@ -52,6 +52,6 @@ int main (int argc, char *argv[])
 	}
 	in.close();
 	out.close();
-	
-	return 0;	
+
+	return 0;
 }
