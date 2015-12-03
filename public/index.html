@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="permitcatApp" lang="bg">
+<head>
+	<title>Lumber Spotter</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script src="assets/js/angular-route.min.js"></script>
+	<script src="assets/js/app.js"></script>
+	<script src="assets/js/controllers.js"></script>
+	<script src="assets/js/autocomplete.js"></script>
+	<link rel="stylesheet" href="assets/css/app.css">
+</head>
+
+<body>
+	<div class="container-fluid">
+ 		<header class="page-header">
+			<h1><a href="#">Lumber Spotter</a></h1>
+		</header>
+
+		<form>
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="fa fa-search" aria-hidden="true"></span></div>
+					<input id="search" type="search" class="form-control" autofocus placeholder="Въведете населено място" ng-model="search">
+				</div>
+			</div>
+		</form>
+
+		<div ng-view></div>
+
+		<footer class="footer">
+			<div class="container">
+				<ul class="list-inline text-center">
+				<li>
+					<a class="" href="https://github.com/joorgen/lumberspotter/">
+						<i class="fa fa-github fa-3x"></i>
+					</a>
+				</li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,14 @@
+<i class="fa fa-refresh fa-spin" ng-show="loading"></i>
+<span ng-show="!loading && !dataAvail">404</span>
+<div ng-show="dataAvail">
+	<h2 style="text-align: center">ПОЗВОЛИТЕЛНО за СЕЧ № {{permit["Номер"]}}/{{permit["Дата"]}}</h2>
+
+	<p>Разрешава се на представител на <strong>{{permit["Фирма"]}}</strong>, да извърши сечта в отдел № <strong>{{permit["Отдел"]}}</strong>; подотдел <strong>{{permit["Буква"]}}</strong>; имот с (кадастрален/КВС) <strong>№ {{permit["Кадастрален_номер"]}}</strong>
+Община <strong>{{permit["Община"]}}</strong>; Землище <strong>{{permit["Землище"]}}</strong> площно сечище от <strong>{{permit["Площ"]}}</strong> хектара. Собственост : <strong>{{permit["Собственост"]}}</strong>.
+Дърветата са маркирани с контролна горска марка № <strong>{{permit["Марка"]}}</strong>, с <strong>{{permit["Боя"]}}</strong> боя.
+Очакваният добив е <strong>{{permit["Количество"]}}</strong> плътни кубически метра лежаща маса.</p>
+<p>Срок за провеждане на сечта от <strong>{{permit["Сеч_от_дата"]}}</strong> г. до <strong>{{permit["Сеч_до_дата"]}}</strong> г.</p>
+<p>Срок за извозване на материалите от сечището от <strong>{{permit["Извоз_от_дата"]}}</strong> г. до <strong>{{permit["Извоз_до_дата"]}}</strong> г.</p>
+<p>Начин на почистване на сечището : <strong>{{permit["Начин_на_почистване"]}}</strong></p>
+<p>Материалите ще се извозят до временен склад : <strong>{{permit["Времемен_склад"]}}</strong></p>
+</div>
