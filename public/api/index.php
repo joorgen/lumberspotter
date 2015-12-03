@@ -41,7 +41,7 @@ function autocomplete_places()
 	} catch(PDOException $e) {
 		//error_log($e->getMessage(), 3, '/var/tmp/php.log');
 		echo '{"error":{"text":'. $e->getMessage() .'}}';
-	}
+	} 
 }
 
 function getPlace($name,$obshtina)
