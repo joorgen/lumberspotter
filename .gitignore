@@ -1,3 +1,4 @@
 public/api/config.dev.php
 public/api/config.php
 public/api/config.production.php
+vendor/*
