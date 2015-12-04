@@ -1,0 +1,29 @@
+{
+  "name": "lumberspotter",
+  "description": "",
+  "main": "public/index.html",
+  "moduleType": [],
+  "authors": [
+    "Teodor Todorov"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/joorgen/lumberspotter",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.8",
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.6",
+    "bootswatch": "~3.3.6",
+    "font-awesome": "fontawesome#~4.5.0",
+    "jquery-ui": "~1.11.4",
+    "jquery": "~2.1.4"
+  }
+}
