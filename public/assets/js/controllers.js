@@ -11,7 +11,6 @@ permitcatControllers.controller('PlaceDetailsCtrl', ['$scope', '$routeParams', '
 
 		$http.get('api/places/' + $routeParams.placeId.toLowerCase() + '-' +$routeParams.obshtina.toLowerCase())
 			.success(function(data) {
-				console.log(data);
 				$scope.permits = data;
 			})
 			.catch(function (err) {
